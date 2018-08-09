@@ -18,10 +18,13 @@ import java.util.Map;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.junit.runner.JUnitCore;
+import org.junit.runner.Result;
 
 public class EvaluationServiceTest {
 
 	private static final EvaluationService evaluationService = new EvaluationService();
+
 
 	@Rule
 	public ExpectedException expectedException = ExpectedException.none();
@@ -30,12 +33,14 @@ public class EvaluationServiceTest {
 	 * Question 1
 	 ******************************************************************/
 	@Test
-	public void testAnEmptyString() {
+	public void testAnEmptyString()
+	{
 		assertEquals("", evaluationService.reverse(""));
 	}
 
 	@Test
-	public void testAWord() {
+	public void testAWord()
+	{
 		assertEquals("tobor", evaluationService.reverse("robot"));
 	}
 
@@ -578,7 +583,7 @@ public class EvaluationServiceTest {
 	 * Question 17
 	 ******************************************************************/
 	@Test
-	public void modernTime() {
+	public void modernT0ime() {
 		assertEquals(LocalDateTime.of(2043, Month.JANUARY, 1, 1, 46, 40),
 				evaluationService.getGigasecondDate(LocalDate.of(2011, Month.APRIL, 25)));
 	}
